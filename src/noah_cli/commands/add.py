@@ -253,7 +253,7 @@ def main(
     data_manager().add_files(entries, app_paths)
 
     # Write config file
-    config_manager().add_entries(config, entries)
+    config_manager().add_data(config, entries)
     config_manager().save(config, app_paths)
 
     console().request_for_newline()

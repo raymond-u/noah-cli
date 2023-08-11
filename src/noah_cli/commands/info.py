@@ -12,7 +12,7 @@ app = Typer()
 @app.callback(rich_help_panel=format_section("Info"))
 def main():
     """
-    Manage information about the project.
+    Manage the information about the project.
     """
     ...
 
@@ -25,7 +25,7 @@ def show(
                                          show_default=False)] = 0
 ):
     """
-    Show information about the project.
+    Show the information about the project.
     """
     # Parse common options
     digest_common_options(verbosity)
@@ -50,7 +50,7 @@ def edit(
                                          show_default=False)] = 0
 ):
     """
-    Edit information about the project.
+    Edit the information about the project.
     """
     # Parse common options
     digest_common_options(verbosity)

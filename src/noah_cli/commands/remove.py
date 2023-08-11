@@ -87,7 +87,7 @@ def main(
 
     if directories == ["."]:
         # Use as wildcard
-        entries = OrderedSet(config_manager().find_entries(config, [Entry()]))
+        entries = OrderedSet(config_manager().find_data(config, [Entry()]))
     else:
         # Handle local directory paths
         entries = OrderedSet[Entry]()
@@ -121,7 +121,7 @@ def main(
         console().print_trace(f"Public data entries: {info.entries}")
 
         entries.update(info.entries)
-        entries = OrderedSet(config_manager().find_entries(config, entries))
+        entries = OrderedSet(config_manager().find_data(config, entries))
 
     # Print entries and prompt for confirmation
     print_entries(entries, "will be removed")
@@ -132,7 +132,7 @@ def main(
     data_manager().remove_files(entries, app_paths)
 
     # Write config file
-    config_manager().remove_entries(config, entries)
+    config_manager().remove_data(config, entries)
     config_manager().save(config, app_paths)
 
     console().request_for_newline()

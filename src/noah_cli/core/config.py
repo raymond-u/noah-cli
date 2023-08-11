@@ -59,7 +59,7 @@ class ConfigManager:
             self.console.print_error(f"Failed to write {format_path(app_paths.config_file)} ({e}).")
             raise Exit(code=1)
 
-    def add_entries(self, config: Config, entries: Iterable[Entry]):
+    def add_data(self, config: Config, entries: Iterable[Entry]):
         count = 0
 
         for entry in entries:
@@ -104,7 +104,7 @@ class ConfigManager:
 
         self.console.print_debug(f"Added {count} entries.")
 
-    def remove_entries(self, config: Config, entries: Iterable[Entry]):
+    def remove_data(self, config: Config, entries: Iterable[Entry]):
         count = 0
 
         for entry in entries:
@@ -129,7 +129,7 @@ class ConfigManager:
 
         self.console.print_debug(f"Removed {count} entries.")
 
-    def find_entries(self, config: Config, entries: Iterable[Entry]) -> list[Entry]:
+    def find_data(self, config: Config, entries: Iterable[Entry]) -> list[Entry]:
         found = OrderedSet()
 
         for entry in entries:

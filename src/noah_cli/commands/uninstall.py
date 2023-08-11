@@ -24,7 +24,7 @@ def main(
     config = config_manager().load(app_paths)
 
     # Uninstall files
-    entries = config_manager().find_entries(config, [Entry()])
+    entries = config_manager().find_data(config, [Entry()])
     data_manager().remove_files(entries, app_paths)
 
     console().request_for_newline()

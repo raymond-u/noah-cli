@@ -24,7 +24,7 @@ def main(
                                                 help="Verify checksums when validating files.")] = False
 ):
     """
-    Install data into the project as per the config file.
+    Install files for the project.
     """
     # Parse common options
     digest_common_options(verbosity, add_mode, aspera_key)

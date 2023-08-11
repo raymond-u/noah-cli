@@ -97,6 +97,14 @@ Use the `noah install` command to retrieve files for a project:
 noah install
 ```
 
+## Offload files for a project
+
+Use the `noah uninstall` command to offload files for a project, in case you need to free up some disk space:
+
+```bash
+noah uninstall
+```
+
 ## Edit the information about a project
 
 Use the `noah info show` command to print the information about a project:

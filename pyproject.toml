@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "noah-cli"
+version = "0.1.0"
+description = "a project management tool for reproducible, shareable, and streamlined bioinformatics analysis"
+authors = ["raymond-u <36328498+raymond-u@users.noreply.github.com>"]
+readme = "README.md"
+repository = "https://github.com/raymond-u/noah-cli"
+keywords = ["bioinformatics", "project management"]
+classifiers = ["Topic :: Scientific/Engineering :: Bio-Informatics"]
+packages = [{include = "noah_cli", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = {extras = ["all"], version = "^0.9.0"}
+fabric = "^3.1.0"
+pysradb = "^2.1.0"
+requests = "^2.31.0"
+dacite = "^1.8.1"
+ordered-set = "^4.1.0"
+ruamel-yaml = "^0.17.32"
+
+[tool.poetry.scripts]
+noah = "noah_cli.app.main:app"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

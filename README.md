@@ -2,6 +2,8 @@
 
 Noah is a project management tool specifically designed for bioinformatics projects. It enables reproducible analysis of large datasets, making it effortless to share and collaborate with others.
 
+[![PyPI version](https://badge.fury.io/py/noah-cli.svg)](https://badge.fury.io/py/noah-cli)
+
 # Features
 
 - [x] A human-readable configuration file

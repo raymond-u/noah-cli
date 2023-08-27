@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Callable, TypeVar
+from typing import Any, Callable, TypeVar
 
 from rich import console
 from rich.prompt import Confirm, Prompt
@@ -45,48 +45,49 @@ class Console:
         if not self.is_empty:
             self.need_newline = True
 
-    def print(self, *args, **kwargs):
+    def print(self, *args: Any, **kwargs: Any):
         kwargs["highlight"] = kwargs.get("highlight", False)
 
         self.ensure_newline()
         self.stdout.print(*args, **kwargs)
 
-    def print_trace(self, *args, **kwargs):
+    def print_trace(self, *args: Any, **kwargs: Any):
         if self.log_level.value > LogLevels.TRACE.value:
             return
 
         kwargs["highlight"] = kwargs.get("highlight", False)
         self.stdout.print("[TRACE]", *args, **kwargs)
 
-    def print_debug(self, *args, **kwargs):
+    def print_debug(self, *args: Any, **kwargs: Any):
         if self.log_level.value > LogLevels.DEBUG.value:
             return
 
         kwargs["highlight"] = kwargs.get("highlight", False)
         self.stderr.print("[DEBUG]", *args, **kwargs)
 
-    def print_info(self, *args, **kwargs):
+    def print_info(self, *args: Any, **kwargs: Any):
         if self.log_level.value > LogLevels.INFO.value:
             return
 
         kwargs["highlight"] = kwargs.get("highlight", False)
         self.stderr.print("[INFO]", *args, **kwargs)
 
-    def print_warning(self, *args, **kwargs):
+    def print_warning(self, *args: Any, **kwargs: Any):
         if self.log_level.value > LogLevels.WARNING.value:
             return
 
         kwargs["highlight"] = kwargs.get("highlight", False)
         self.stderr.print("[bold yellow][WARNING][/bold yellow]", *args, **kwargs)
 
-    def print_error(self, *args, **kwargs):
+    def print_error(self, *args: Any, **kwargs: Any):
         if self.log_level.value > LogLevels.ERROR.value:
             return
 
         kwargs["highlight"] = kwargs.get("highlight", False)
         self.stderr.print("[bold red][ERROR][/bold red]", *args, **kwargs)
 
-    def ask_for_enum(self, prompt: str, enum: type[TEnum], default: TEnum | None = None, *args, **kwargs) -> TEnum:
+    def ask_for_enum(self, prompt: str, enum: type[TEnum], default: TEnum | None = None,
+                     *args: Any, **kwargs: Any) -> TEnum:
         self.ensure_newline()
 
         kwargs["prompt"] = f"[bold]{prompt}[/]"
@@ -98,7 +99,7 @@ class Console:
 
         return enum(answer)
 
-    def ask_for_list(self, prompt: str, default: list[str] | None = None, *args, **kwargs) -> list[str]:
+    def ask_for_list(self, prompt: str, default: list[str] | None = None, *args: Any, **kwargs: Any) -> list[str]:
         self.ensure_newline()
 
         kwargs["prompt"] = f"[bold]{prompt}[/] (leave blank to finish)"
@@ -114,8 +115,8 @@ class Console:
 
         return answers
 
-    def ask_for_string(self, prompt: str, default: str | None = None,
-                       guard: Callable[[str], bool] = lambda x: bool(x), *args, **kwargs) -> str:
+    def ask_for_string(self, prompt: str, default: str | None = None, guard: Callable[[str], bool] = lambda x: bool(x),
+                       *args: Any, **kwargs: Any) -> str:
         self.ensure_newline()
 
         kwargs["prompt"] = f"[bold]{prompt}[/]"
@@ -127,7 +128,7 @@ class Console:
 
         return answer
 
-    def confirm(self, prompt: str, default: bool = True, *args, **kwargs) -> bool:
+    def confirm(self, prompt: str, default: bool = True, *args: Any, **kwargs: Any) -> bool:
         self.ensure_newline()
 
         kwargs["prompt"] = f"[bold]{prompt}[/] " + ("[Y/n]" if default else "[y/N]")
@@ -137,5 +138,5 @@ class Console:
 
         return Confirm.ask(*args, **kwargs)
 
-    def status(self, *args, **kwargs) -> Status:
+    def status(self, *args: Any, **kwargs: Any) -> Status:
         return self.stdout.status(*args, **kwargs)

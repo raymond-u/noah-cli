@@ -41,6 +41,6 @@ def main(
                                         is_eager=True)] = False
 ):
     """
-    A command-line tool for reproducibly fetching and managing NGS data.
+    A project management tool for reproducible, portable, and streamlined bioinformatics analysis.
     """
     ...

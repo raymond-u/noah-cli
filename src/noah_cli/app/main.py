@@ -7,7 +7,6 @@ from ..commands import add, check, fetch, info, init, install, offload, remove, 
 from ..helpers.common import get_app_version
 
 app = Typer(
-    add_completion=False,
     context_settings={"help_option_names": ["-h", "--help"]},
     no_args_is_help=True,
     pretty_exceptions_show_locals=False,

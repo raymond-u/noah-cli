@@ -51,4 +51,4 @@ For more information, please refer to [examples](examples/README.md).
 
 # License
 
-Noah is licensed under the MIT license. See [LICENSE](LICENSE) for details.
+This software is licensed under the MIT license. See [LICENSE](LICENSE) for more details.

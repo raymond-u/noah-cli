@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "noah-cli"
-version = "0.1.1"
-description = "a project management tool for reproducible, shareable, and streamlined bioinformatics analysis"
+version = "0.2.0"
+description = "a project management tool for reproducible, portable, and streamlined bioinformatics analysis"
 authors = ["raymond-u <36328498+raymond-u@users.noreply.github.com>"]
 readme = "README.md"
 repository = "https://github.com/raymond-u/noah-cli"

@@ -3,6 +3,8 @@
 Noah is a project management tool specifically designed for bioinformatics projects. It enables reproducible analysis of large datasets, making it effortless to share and collaborate with others.
 
 [![PyPI version](https://badge.fury.io/py/noah-cli.svg)](https://badge.fury.io/py/noah-cli)
+[![Anaconda-Server Badge](https://anaconda.org/bioconda/noah-cli/badges/version.svg)](https://anaconda.org/bioconda/noah-cli)
+[![image](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat-square)](https://anaconda.org/bioconda/noah-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Features
